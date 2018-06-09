@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  9 JUN 2018 15:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  9 JUN 2018 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -189,7 +189,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@paragraph=\count110
 
 Using 'Abbrev' bibliography style
-LaTeX Info: Redefining \cite on input line 1249.
+LaTeX Info: Redefining \cite on input line 1247.
 \bibindent=\dimen130
 \colcntr=\count111
 \saveb@x=\box29
