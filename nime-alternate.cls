@@ -1029,6 +1029,10 @@
 \newif\if@uchead
 \@ucheadfalse
 
+
+\newif\if@anonymize
+
+
 %% CHANGES: NEW NOTE
 %% NOTE: OK to use old-style font commands below, since they were
 %% suitably redefined for LaTeX2e
