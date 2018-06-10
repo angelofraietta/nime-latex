@@ -60,8 +60,9 @@
 \usepackage{url}
 \usepackage[a4paper]{geometry}
 
-
-\usepackage{anonymize} % Use [blind] to black out
+% Use [blind] to black out eg \documentclass[blind]{nime-alternate} 
+%un comment if you want to use anonymize package inside class
+%\usepackage{anonymize} 
 
 %\usepackage[
 %	pdftex, 
