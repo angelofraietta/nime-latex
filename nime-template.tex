@@ -11,11 +11,8 @@
 % This file should be compiled with "nime-alternate.cls"
 
 \documentclass{nime-alternate}
-
-%\makeatletter
-%\@anonymizefalse  % Uncomment to show text
-
-%\makeatother
+\usepackage[blind]{anonymize}
+%\usepackage{anonymize}
 
 \begin{document}
 %
@@ -23,7 +20,7 @@
 %\conferenceinfo{NIME'17,}{May 15-19, 2017, Aalborg University Copenhagen, Denmark.}
 \conferenceinfo{NIME'18,}{June 3-6, 2018, Blacksburg, Virginia, USA.}
 
-\title{NIME Proceedings \anonymize{Template} for \anonymize{LaTeX}}
+\title{NIME Proceedings Template for LaTeX}
 
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -68,7 +65,7 @@
 % 1st. author
 \alignauthor
 Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
        \affaddr{1932 Wallamaloo Lane}\\
        \affaddr{Wallamaloo, New Zealand}\\
        \email{trovato@corporation.com}
@@ -133,7 +130,7 @@ Preparing ACM SIG Proceedings Using \LaTeX$2_\epsilon$\ and Bib\TeX}.
 This source file has been written with the intention of being
 compiled under \LaTeX$2_\epsilon$\ and BibTeX.
 
-To make best use of this sample \anonymize{document}, run it through \LaTeX\
+To make best use of this sample document, run it through \LaTeX\
 and BibTeX, and compare this source code with your compiled PDF file. A compiled PDF version is available to help you with the `look and feel.'  \textbf{The paper submitted to the NIME conference must be stored in an \underline{A4}-sized PDF file, so North Americans should take care not to inadvertently generate \underline{letter} paper-sized PDF files.}  This paper template should prevent that from happening if the \texttt{pdflatex} program is used to generate the PDF file.
 
 The abstract should preferably be between 100 and 200 words.
