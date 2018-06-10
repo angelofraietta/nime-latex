@@ -59,10 +59,6 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage[a4paper]{geometry}
-
-\usepackage{soul}
-\usepackage{tikz}
-\usetikzlibrary{calc}
 %\usepackage[
 %	pdftex, 
 %	colorlinks,
@@ -1033,8 +1029,6 @@
 \newif\if@uchead
 \@ucheadfalse
 
-\newif\if@anonymize
-
 %% CHANGES: NEW NOTE
 %% NOTE: OK to use old-style font commands below, since they were
 %% suitably redefined for LaTeX2e
@@ -1247,85 +1241,6 @@
     \fi
     \@ifstar{\@citeNB\@@cite}{\@normalcite\@@cite}%
 }
-
-\@anonymizetrue    % Uncomment to hide text
-
-\newdimen\highlight@previous
-\newdimen\highlight@current
-\newlength{\item@width}
-\if@anonymize
-\newcommand{\highlight@DoHighlight}{
-	\fill [outer sep = -15pt, inner sep = 0pt, color=black]
-	($(begin highlight)+(0,8pt)$) rectangle ($(end highlight)+(0,-3pt)$) ;
-}
-
-\newcommand{\highlight@BeginHighlight}{
-	\coordinate (begin highlight) at (0,0) ;
-}
-
-\newcommand{\highlight@EndHighlight}{
-	\coordinate (end highlight) at (0,0) ;
-}
-\DeclareRobustCommand*\anonymize{%
-	\SOUL@setup
-	\def\SOUL@preamble{%
-		\begin{tikzpicture}[overlay, remember picture]
-		\highlight@BeginHighlight
-		\highlight@EndHighlight
-		\end{tikzpicture}%
-	}%
-	%
-	\def\SOUL@postamble{%
-		\begin{tikzpicture}[overlay, remember picture]
-		\highlight@EndHighlight
-		\highlight@DoHighlight
-		\end{tikzpicture}%
-	}%
-	%
-	\def\SOUL@everyhyphen{%
-		\discretionary{%
-			\SOUL@setkern\SOUL@hyphkern
-			\SOUL@sethyphenchar
-			\tikz[overlay, remember picture] \highlight@EndHighlight ;%
-		}{%
-		}{%
-			\SOUL@setkern\SOUL@charkern
-		}%
-	}%
-	%
-	\def\SOUL@everyexhyphen##1{%
-		\SOUL@setkern\SOUL@hyphkern
-		\settowidth{\item@width}{##1}%
-		\makebox[\item@width]{}%
-		\discretionary{%
-			\tikz[overlay, remember picture] \highlight@EndHighlight ;%
-		}{%
-		}{%
-			\SOUL@setkern\SOUL@charkern
-		}%
-	}%
-	%
-	\def\SOUL@everysyllable{%
-		\begin{tikzpicture}[overlay, remember picture]
-		\path let \p0 = (begin highlight), \p1 = (0,0) in \pgfextra
-		\global\highlight@previous=\y0
-		\global\highlight@current =\y1
-		\endpgfextra (0,0) ;
-		\ifdim\highlight@current < \highlight@previous
-		\highlight@DoHighlight
-		\highlight@BeginHighlight
-		\fi
-		\end{tikzpicture}%
-		\settowidth{\item@width}{\the\SOUL@syllable}%
-		\makebox[\item@width]{}%
-		\tikz[overlay, remember picture] \highlight@EndHighlight ;%
-	}%
-	\SOUL@
-}
-\else
-\newcommand{\anonymize}[1]{#1}
-\fi
-
 %\def\cite{\start@cite23}
 \DeclareRobustCommand\cite{\start@cite23}		% January 2008
 \def\citeNP{\cite*}					% No Parentheses e.g. 5
