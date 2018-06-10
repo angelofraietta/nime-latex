@@ -59,6 +59,10 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage[a4paper]{geometry}
+
+
+\usepackage{anonymize} % Use [blind] to black out
+
 %\usepackage[
 %	pdftex, 
 %	colorlinks,
@@ -356,6 +360,8 @@
 \newfont{\ninept}{ptmr8t at 9pt}
 % +++++++++++++++++++++++++++++++++++++++++++++
 % -- End of block B --
+
+
 
 %\def\email#1{{{\eaddfnt{\vskip 4pt#1}}}}
 % If we have an email, inside a "shared affiliation" then we need the following instead

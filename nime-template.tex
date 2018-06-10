@@ -10,9 +10,8 @@
 % Based on "sig-alternate.tex" V1.9 April 2009
 % This file should be compiled with "nime-alternate.cls"
 
-\documentclass{nime-alternate}
-\usepackage[blind]{anonymize}
-%\usepackage{anonymize}
+\documentclass[blind]{nime-alternate} % Comment out when publishing
+%\documentclass[publish]{nime-alternate} % Uncomment when publishing final version
 
 \begin{document}
 %
@@ -64,45 +63,45 @@
 %
 % 1st. author
 \alignauthor
-Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+\anonymize{Ben Trovato}\titlenote{\anonymize{Dr.~Trovato insisted his name be first.}}\\
        \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
-       \email{trovato@corporation.com}
+       \affaddr{\anonymize{1932 Wallamaloo Lane}}\\
+       \affaddr{\anonymize{Wallamaloo, New Zealand}}\\
+       \email{\anonymize{trovato@corporation.com}}
 % 2nd. author
 \alignauthor
-G.K.M. Tobin\titlenote{The secretary disavows
-any knowledge of this author's actions.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{P.O. Box 1212}\\
-       \affaddr{Dublin, Ohio 43017-6221}\\
-       \email{webmaster@marysville-ohio.com}
+\anonymize{G.K.M. Tobin}\titlenote{\anonymize{The secretary disavows
+any knowledge of this author's actions.}}\\
+       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
+       \affaddr{\anonymize{P.O. Box 1212}}\\
+       \affaddr{\anonymize{Dublin, Ohio 43017-6221}}\\
+       \email{\anonymize{webmaster@marysville-ohio.com}}
 % 3rd. author
-\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
+\alignauthor \anonymize{Lars Th{\o}rv{\"a}ld}\titlenote{This author is the
 one who did all the really hard work.}\\
-       \affaddr{The Th{\o}rv{\"a}ld Group}\\
-       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
-       \affaddr{Hekla, Iceland}\\
-       \email{larst@affiliation.org}
+       \affaddr{\anonymize{The Th{\o}rv{\"a}ld Group}}\\
+       \affaddr{\anonymize{1 Th{\o}rv{\"a}ld Circle}}\\
+       \affaddr{\anonymize{Hekla, Iceland}}\\
+       \email{l\anonymize{arst@affiliation.org}}
 \and  % use '\and' if you need 'another row' of author names
 % 4th. author
-\alignauthor Lawrence P. Leipuner\\
-       \affaddr{Brookhaven Laboratories}\\
-       \affaddr{Brookhaven National Lab}\\
-       \affaddr{P.O. Box 5000}\\
-       \email{lleipuner@researchlabs.org}
+\alignauthor \anonymize{Lawrence P. Leipuner}\\
+       \affaddr{\anonymize{Brookhaven Laboratories}}\\
+       \affaddr{\anonymize{Brookhaven National Lab}}\\
+       \affaddr{\anonymize{P.O. Box 5000}}\\
+       \email{\anonymize{lleipuner@researchlabs.org}}
 % 5th. author
-\alignauthor Sean Fogarty\\
-       \affaddr{NASA Ames Research Center}\\
-       \affaddr{Moffett Field}\\
-       \affaddr{California 94035}\\
-       \email{fogartys@amesres.org}
+\alignauthor \anonymize{Sean Fogarty}\\
+       \affaddr{\anonymize{NASA Ames Research Center}}\\
+       \affaddr{\anonymize{Moffett Field}}\\
+       \affaddr{\anonymize{California 94035}}\\
+       \email{\anonymize{fogartys@amesres.org}}
 % 6th. author
-\alignauthor Anon Nymous\\
-       \affaddr{Redacted }\\
-       \affaddr{8600 Datapoint Drive}\\
-       \affaddr{San Antonio, Texas 78229}\\
-       \email{cpalmer@prl.com}
+\alignauthor \anonymize{Anon Nymous}\\
+       \affaddr{\anonymize{Redacted }}\\
+       \affaddr{\anonymize{8600 Datapoint Drive}}\\
+       \affaddr{\anonymize{San Antonio, Texas 78229}}\\
+       \email{\anonymize{cpalmer@prl.com}}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -122,7 +121,7 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 \begin{abstract}
 This paper provides a sample of a \LaTeX\ document for the NIME conference series. It conforms,
 somewhat loosely, to the formatting guidelines for
-ACM SIG Proceedings. It is an {\em alternate} style which produces
+\anonymize{ACM SIG Proceedings}. It is an {\em alternate} style which produces
 a {\em tighter-looking} paper and was designed in response to
 concerns expressed, by authors, over page-budgets.
 It complements the document \textit{Author's (Alternate) Guide to

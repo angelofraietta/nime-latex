@@ -12,12 +12,14 @@
 
 %\newif\if@anonymize
 
+\makeatletter
 %% Global indentation option
 \newif\if@anonymize\@anonymizefalse
 
 \DeclareOption{blind}{
 	\@anonymizetrue    % Uncomment to hide text
 }
+
 
 \ProcessOptions\relax
 
@@ -55,29 +57,6 @@
 		\end{tikzpicture}%
 	}%
 	%
-	\def\SOUL@everyhyphen{%
-		\discretionary{%
-			\SOUL@setkern\SOUL@hyphkern
-			\SOUL@sethyphenchar
-			\tikz[overlay, remember picture] \highlight@EndHighlight ;%
-		}{%
-		}{%
-			\SOUL@setkern\SOUL@charkern
-		}%
-	}%
-	%
-	\def\SOUL@everyexhyphen##1{%
-		\SOUL@setkern\SOUL@hyphkern
-		\settowidth{\item@width}{##1}%
-		\makebox[\item@width]{}%
-		\discretionary{%
-			\tikz[overlay, remember picture] \highlight@EndHighlight ;%
-		}{%
-		}{%
-			\SOUL@setkern\SOUL@charkern
-		}%
-	}%
-	%
 	\def\SOUL@everysyllable{%
 		\begin{tikzpicture}[overlay, remember picture]
 		\path let \p0 = (begin highlight), \p1 = (0,0) in \pgfextra
@@ -98,7 +77,7 @@
 \else
 \newcommand{\anonymize}[1]{#1}
 \fi
-
+\makeatother
 
 
 \endinput
