@@ -15,12 +15,12 @@
 \usepackage{etoolbox}
 \makeatletter
 
-\newtoggle{anon}
-%you have to watch out here because if you are doing the swap on your bibliography, it appears cached, so you need to do a compile, then bibliography, then compile again
-%\toggletrue{anon}
-\togglefalse{anon}
+\newtoggle{anonbibliography}
+%you have to watch out here because if you are doing the swap on your bibliography, it appears cached, so you need to do clean all auxilary files and then compile again
+\toggletrue{anonbibliography}
+%\togglefalse{anonbibliography}
 
-\iftoggle{anon}{%
+\iftoggle{anonbibliography}{%
 	\usepackage[blind]{anonymize}
 }{%
 	\usepackage{anonymize}
@@ -510,7 +510,7 @@ and the \textbf{.cls} and \textbf{.tex} files that it describes.
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
 
-\iftoggle{anon}{%
+\iftoggle{anonbibliography}{%
 	\bibliography{nime-references,personal-anon}
 }{%
 	\bibliography{nime-references,personal} 
