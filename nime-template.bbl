@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{mypublication}
+I.~M. Author.
+\newblock This is one of my publications.
+\newblock {\em The journal name}, 15(5):795--825, November 1993.
+
+\bibitem{myotherpublication}
+I.~M. Author.
+\newblock This is another one of my publications.
+\newblock {\em The other journal name}, 2(4):111--222, April 2010.
+
 \bibitem{bowman:reasoning}
 M.~Bowman, S.~K. Debray, and L.~L. Peterson.
 \newblock Reasoning about naming systems.

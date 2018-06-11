@@ -10,11 +10,24 @@
 % Based on "sig-alternate.tex" V1.9 April 2009
 % This file should be compiled with "nime-alternate.cls"
 
-%\documentclass[blind]{nime-alternate} % Comment out when publishing final version
-\documentclass[publish]{nime-alternate} % Uncomment when publishing final version
+\documentclass{nime-alternate} % Uncomment when publishing final version
 
-\usepackage[blind]{anonymize}
-%\usepackage[publish]{anonymize}
+\usepackage{etoolbox}
+\makeatletter
+
+\newtoggle{anon}
+%you have to watch out here because if you are doing the swap on your bibliography, it appears cached, so you need to do a compile, then bibliography, then compile again
+%\toggletrue{anon}
+\togglefalse{anon}
+
+\iftoggle{anon}{%
+	\usepackage[blind]{anonymize}
+}{%
+	\usepackage{anonymize}
+}
+\makeatother
+
+%\usepackage{anonymize}
 
 
 \begin{document}
@@ -442,6 +455,7 @@ conference proceedings \cite{clark:pct} or
 books \cite{salas:calculus, Lamport:LaTeX} listed
 in the Bibliography section of your
 article will occur throughout the text of your article.
+You will note that \cite{mypublication} and \cite{myotherpublication} were written by me, so in blind mode, it will use the \texttt{personal-anon.bib} file. 
 You should use BibTeX to automatically produce this bibliography;
 you simply need to insert one of several citation commands with
 a key of the item cited in the proper location in
@@ -495,7 +509,14 @@ and the \textbf{.cls} and \textbf{.tex} files that it describes.
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{nime-references}  % sigproc.bib is the name of the Bibliography in this case
+
+\iftoggle{anon}{%
+	\bibliography{nime-references,personal-anon}
+}{%
+	\bibliography{nime-references,personal} 
+}
+
+
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex

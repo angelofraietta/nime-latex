@@ -3,44 +3,45 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: nime-template.aux
 The style file: abbrv.bst
 Database file #1: nime-references.bib
-You've used 6 entries,
+Database file #2: personal.bib
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            537 strings with 4468 characters,
-and the built_in function-call counts, 1813 in all, are:
-= -- 176
-> -- 59
+            548 strings with 4641 characters,
+and the built_in function-call counts, 2391 in all, are:
+= -- 234
+> -- 73
 < -- 1
-+ -- 25
-- -- 18
-* -- 122
-:= -- 303
-add.period$ -- 19
-call.type$ -- 6
-change.case$ -- 25
++ -- 31
+- -- 22
+* -- 168
+:= -- 399
+add.period$ -- 25
+call.type$ -- 8
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 78
-empty$ -- 164
-format.name$ -- 18
-if$ -- 391
+cite$ -- 8
+duplicate$ -- 100
+empty$ -- 218
+format.name$ -- 22
+if$ -- 513
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 8
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 30
+int.to.str$ -- 8
+missing$ -- 10
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 34
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 27
 quote$ -- 0
-skip$ -- 49
+skip$ -- 63
 stack$ -- 0
-substring$ -- 114
-swap$ -- 14
+substring$ -- 166
+swap$ -- 16
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 28
 warning$ -- 0
-while$ -- 17
-width$ -- 7
-write$ -- 69
+while$ -- 23
+width$ -- 9
+write$ -- 91
