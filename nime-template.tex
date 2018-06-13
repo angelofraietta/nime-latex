@@ -12,20 +12,10 @@
 
 \documentclass{nime-alternate} % Uncomment when publishing final version
 
-\usepackage{etoolbox}
-\newtoggle{blindreview}
-\togglefalse{blindreview} % Leave this intact as it is our default
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% uncomment line below to make blind
-%\toggletrue{blindreview} 
-
-
-\iftoggle{blindreview}{%
-	\usepackage[blind]{anonymize}
-}{%
-	\usepackage{anonymize}
-}
+% Uncomment only one of the ones below
+\usepackage{anonymize} %                   Uncomment this line to publish
+%\usepackage[blind]{anonymize} %      Uncomment this line for blind review
 
 
 \begin{document}
@@ -123,7 +113,7 @@ one who did all the really hard work.}\\
 % for aesthetic reasons that you place these 'additional authors'
 % in the \additional authors block, viz.
 \additionalauthors{Additional authors: \anonymize{John Smith (The Th{\o}rv{\"a}ld Group,}
-email: {\texttt{\anonymize{jsmith@affiliation.org}}}) and \anonymize{Julius P.~Kumquat
+email: {\texttt{\anonymize{jsmith@affiliation.org}}}) and \anonymize{Julius P.~Kumquat 
 (K. Consortium,} email: {\texttt{\anonymize{jpkumquat@consortium.net}}}).}
 \date{30 July 1999}
 % Just remember to make sure that the TOTAL number of authors
@@ -475,12 +465,12 @@ This is what is stipulated in the SIGS style specifications.
 No other citation format is endorsed or supported.
 
 \subsubsection{Blind Review}
-A convenient flag has been provided that will allow you to easily mask any text or reference that could be used to identify you as the author. To enable the feature, uncomment the \texttt{\textbackslash toggletrue{blindreview}} line near the top of the file. 
+A convenient flag has been provided that will allow you to easily mask any text or reference that could be used to identify you as the author. To enable the feature, comment the line \texttt{\textbackslash usepackage{anonymize} } and uncomment the \texttt{\textbackslash usepackage[blind]{anonymize} } lines near the top of the file. 
 
-To mask text that will identify you, place the text you want to hide inside the \textbackslash anonymize function. If you have enabled the blind review feature by uncommenting the \texttt{\textbackslash toggletrue{blindreview}} line, \anonymize{you will notice that this text has been blackened out and you don't need to rewrite it when it is time to publish}. Comment the line \texttt{\textbackslash toggletrue{blindreview}} when you are ready to publish. 
+To mask text that will identify you, place the text you want to hide inside the \textbackslash anonymize function. If you have enabled the blind review feature, \anonymize{you will Change back to the non-blind mode when you are ready to publish}. 
 
-Additionally, you will need to separate your personal references into two separate files. These have been named in this example \texttt{personal.bib} and \texttt{personal-anon.bib}. Mask all identifying information in the \texttt{personal-anon.bib} file, however, keep the citation key the same as that in your \texttt{personal.bib}.
-You will note that \cite{mypublication} and \cite{myotherpublication} were written by me, so in blind mode, it will use the \texttt{personal-anon.bib} file. When switching to and from \texttt{blind} mode, you may need to delete your auxiliary files or do a bibliography refresh to clear the \LaTeX\ cache..
+Additionally, you will need to make a copy of your personal references, using the second version with a key name adding \texttt{-hidden}. For example, if your reference key is \texttt{myotherpublication}, make a copy called \texttt{myotherpublication-hidden} that has text displayed how you would like it displayed in blind review mode. These have been named in this example \texttt{personal.bib} and \texttt{personal-anon.bib}. Mask all identifying information in the \texttt{personal.bib} file, however, keep the citation key the same as that in your \texttt{personal.bib}.
+You will note that \anonybib{mypublication} and \anonybib{myotherpublication} were written by me, so in blind mode, it will use the \texttt{personal-anon.bib} file. When switching to and from \texttt{blind} mode, you may need to delete your auxiliary files or do a bibliography refresh to clear the \LaTeX\ cache..
 
 \subsection{Links}
 
@@ -514,11 +504,7 @@ and the \textbf{.cls} and \textbf{.tex} files that it describes.
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
 
-\iftoggle{blindreview}{%
-	\bibliography{nime-references,personal-anon}
-}{%
 	\bibliography{nime-references,personal} 
-}
 
 
 % You must have a proper ".bib" file

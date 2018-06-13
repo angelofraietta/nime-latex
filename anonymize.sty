@@ -2,17 +2,18 @@
 \ProvidesPackage{anonymize}[2013/01/13 Custom Package]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%this package will blacken out the text included inside the anonymize function if the blind option is set
-% Author Angelo Fraietta
-% Univeristy of New South Wales
-% 10 June 2018
+%   This package will blacken out the text included inside the anonymize function if the blind option is set
+%    Author Angelo Fraietta
+%    Univeristy of New South Wales
+%    10 June 2018
 %
-%   usage 
-%   \usepackage[blind]{anonymize} will blacken text inside function \anonymize{text}
-%   \usepackage{anonymize} will not modify text inside function \anonymize{text}
+%    Usage 
+%    \usepackage[blind]{anonymize} will blacken text inside function \anonymize{text}
+%    \usepackage{anonymize} will not modify text inside function \anonymize{text}
 %
 %
-% the basis for this code was found at https://tex.stackexchange.com/questions/41995/efficient-ways-to-anonymize-a-document/42090 
+%    The basis for this code was found at 
+%    https://tex.stackexchange.com/questions/41995/efficient-ways-to-anonymize-a-document/42090 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{soul}
@@ -38,6 +39,9 @@
 \newlength{\item@width}
 
 \if@anonymize
+
+\newcommand{\anonybib}[1]{\cite{#1-hidden}}
+
 
 \newcommand{\highlight@DoHighlight}{
 	\fill [outer sep = -15pt, inner sep = 0pt, color=black]
@@ -86,6 +90,7 @@
 }
 \else
 \newcommand{\anonymize}[1]{#1}
+\newcommand{\anonybib}[1]{\cite{#1}}
 \fi
 \makeatother
 
